@@ -10,6 +10,15 @@ public class Seat {
     private int seatNumber;
     private char rowLetter;
 
+    public Seat(int seatNumber, char rowLetter, Auditorium auditorium) {
+        this.seatNumber = seatNumber;
+        this.rowLetter = rowLetter;
+        this.auditorium = auditorium;
+    }
+
+    public Seat() {
+    }
+
     public int getSeatId() {
         return seatId;
     }

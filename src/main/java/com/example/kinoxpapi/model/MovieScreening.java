@@ -2,6 +2,7 @@ package com.example.kinoxpapi.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,14 +12,29 @@ public class MovieScreening {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieScreeningId;
     @ManyToOne
-    @JoinColumn(name = "movieidfk", referencedColumnName = "movieId", nullable = false)
+    @JoinColumn(name = "movieId", nullable = false)
     private Movie movie;
 
     @Enumerated(EnumType.STRING)
     private ScreeningTime screeningTime;
-    private Date screeningDate;
+    private LocalDate screeningDate;
 
     private boolean hasPlayed;
+
+    @ManyToOne
+    @JoinColumn(name = "auditoriumId", nullable = false)
+    private Auditorium auditorium;
+
+    public MovieScreening() {
+    }
+
+    public MovieScreening(Movie movie, ScreeningTime screeningTime, LocalDate screeningDate, boolean hasPlayed, Auditorium auditorium) {
+        this.movie = movie;
+        this.screeningTime = screeningTime;
+        this.screeningDate = screeningDate;
+        this.hasPlayed = hasPlayed;
+        this.auditorium = auditorium;
+    }
 
     public int getMovieScreeningId() {
         return movieScreeningId;
@@ -36,11 +52,11 @@ public class MovieScreening {
         this.movie = movie;
     }
 
-    public Date getScreeningDate() {
+    public LocalDate getScreeningDate() {
         return screeningDate;
     }
 
-    public void setScreeningDate(Date screeningDate) {
+    public void setScreeningDate(LocalDate screeningDate) {
         this.screeningDate = screeningDate;
     }
 

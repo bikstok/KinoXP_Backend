@@ -12,6 +12,13 @@ public class Booking {
     private int bookingId;
     private String email;
 
+    public Booking() {
+    }
+
+    public Booking(String email) {
+        this.email = email;
+    }
+
     public int getBookingId() {
         return bookingId;
     }
