@@ -1,8 +1,10 @@
 package com.example.kinoxpapi.confiq;
 
 import com.example.kinoxpapi.model.Auditorium;
+import com.example.kinoxpapi.model.Movie;
 import com.example.kinoxpapi.model.Seat;
 import com.example.kinoxpapi.repository.AuditoriumRepository;
+import com.example.kinoxpapi.repository.MovieRepository;
 import com.example.kinoxpapi.repository.SeatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,10 +12,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class InitData implements CommandLineRunner {
+    @Autowired
+    MovieRepository movieRepository;
 
     @Autowired
     SeatRepository seatRepository;
@@ -23,8 +26,9 @@ public class InitData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        if (seatRepository.count() == 0) {
+        initializeMovies();
 
+        if (seatRepository.count() == 0) {
 
 
             Auditorium auditorium1 = auditoriumRepository.save(new Auditorium(1, 1));
@@ -58,4 +62,25 @@ public class InitData implements CommandLineRunner {
         }
         return seats;
     }
+
+    private void initializeMovies() {
+        if (movieRepository.count() == 0) {
+            System.out.println("Initializing movies in the database...");
+
+            addMovie("Inception", 148, "A thief enters dreams to steal secrets.", 13, "https://xl.movieposterdb.com/14_09/2014/816692/xl_816692_2beaba6e.jpg?v=2025-02-10%2020:28:48", true);
+            addMovie("The Dark Knight", 152, "Batman faces Joker in Gotham.", 13, "https://image.url/dark-knight.jpg", true);
+            addMovie("Interstellar", 169, "A journey beyond our galaxy.", 10, "https://image.url/interstellar.jpg", false);
+
+            System.out.println("Movies have been added to the database");
+        } else {
+            System.out.println("Movies already exist in the database.");
+        }
+    }
+
+    private void addMovie(String title, int length, String description, int ageRequirement, String posterUrl, boolean inRotation) {
+        Movie movie = new Movie(title, length, description, ageRequirement, posterUrl, inRotation);
+        movieRepository.save(movie);
+        System.out.println("Added movie: " + title);
+    }
 }
+

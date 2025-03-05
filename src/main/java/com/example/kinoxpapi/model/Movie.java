@@ -18,6 +18,16 @@ public class Movie {
     private String moviePosterUrl;
     private boolean inRotation;
 
+
+    public Movie(String movieTitel, int movieLength, String description, int ageRequirement, String moviePosterUrl, boolean inRotation) {
+        this.movieTitel = movieTitel;
+        this.movieLength = movieLength;
+        this.description = description;
+        this.ageRequirement = ageRequirement;
+        this.moviePosterUrl = moviePosterUrl;
+        this.inRotation = inRotation;
+    }
+
     public int getMovieId() {
         return movieId;
     }
