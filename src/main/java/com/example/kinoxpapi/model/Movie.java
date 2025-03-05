@@ -19,6 +19,10 @@ public class Movie {
     private boolean inRotation;
 
 
+    public Movie() {
+
+    }
+
     public Movie(String movieTitel, int movieLength, String description, int ageRequirement, String moviePosterUrl, boolean inRotation) {
         this.movieTitel = movieTitel;
         this.movieLength = movieLength;
