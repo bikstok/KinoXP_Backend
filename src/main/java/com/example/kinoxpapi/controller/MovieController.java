@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -44,4 +45,13 @@ public class MovieController {
             return ResponseEntity.notFound().build();
         }
     }
+ @GetMapping("/{movieId}")
+    public ResponseEntity<Movie> getMovie(@PathVariable int movieId) {
+        Optional<Movie> movie = movieRepository.findById(movieId);
+        if (movie.isPresent()){
+            return ResponseEntity.ok(movie.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+ }
 }
