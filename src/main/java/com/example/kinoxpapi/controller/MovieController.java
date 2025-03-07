@@ -26,15 +26,18 @@ public class MovieController {
 
     @GetMapping("/movies")
     public List<Movie> movies() {
-        var movie = movieRepository.findAll();
-        return movie;
+        return movieService.findAllMovies();
     }
 
     @PostMapping("/movie")
     @ResponseStatus(HttpStatus.CREATED)
-    public Movie postMovie(@RequestBody Movie movie) {
-        System.out.println(movie);
-        return movieRepository.save(movie);
+    public ResponseEntity<Movie> postMovie(@RequestBody Movie movie) {
+        Optional<Movie> optionalMovie = movieService.saveMovie(movie);
+        if (optionalMovie.isPresent()) {
+            return ResponseEntity.ok(optionalMovie.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PutMapping("/{movieId}")
@@ -50,7 +53,7 @@ public class MovieController {
 
     @GetMapping("/{movieId}")
     public ResponseEntity<Movie> getMovie(@PathVariable int movieId) {
-        Optional<Movie> movie = movieRepository.findById(movieId);
+        Optional<Movie> movie = movieService.findById(movieId);
         if (movie.isPresent()) {
             return ResponseEntity.ok(movie.get());
         } else {

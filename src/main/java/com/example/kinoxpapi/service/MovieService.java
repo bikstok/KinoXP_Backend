@@ -5,6 +5,7 @@ import com.example.kinoxpapi.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,5 +26,17 @@ public class MovieService {
         }
 
         return optionalMovie;
+    }
+
+    public Optional<Movie> findById(int movieId)    {
+        return movieRepository.findById(movieId);
+    }
+
+    public List<Movie> findAllMovies()    {
+        return movieRepository.findAll();
+    }
+
+    public Optional<Movie> saveMovie(Movie movie)    {
+        return Optional.of(movieRepository.save(movie));
     }
 }
