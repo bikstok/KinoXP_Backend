@@ -99,5 +99,6 @@ public class InitData implements CommandLineRunner {
         }
         return seats;
     }
+
 }
 

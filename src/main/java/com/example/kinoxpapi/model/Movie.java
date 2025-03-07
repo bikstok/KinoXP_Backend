@@ -13,7 +13,7 @@ public class Movie {
     private int movieId;
     private String movieTitle;
     private int movieLength;
-    private String description;
+    private String movieDescription;
     private int ageRequirement;
     private String moviePosterUrl;
     private boolean inRotation;
@@ -23,10 +23,10 @@ public class Movie {
 
     }
 
-    public Movie(String movieTitle, int movieLength, String description, int ageRequirement, String moviePosterUrl, boolean inRotation) {
+    public Movie(String movieTitle, int movieLength, String movieDescription, int ageRequirement, String moviePosterUrl, boolean inRotation) {
         this.movieTitle = movieTitle;
         this.movieLength = movieLength;
-        this.description = description;
+        this.movieDescription = movieDescription;
         this.ageRequirement = ageRequirement;
         this.moviePosterUrl = moviePosterUrl;
         this.inRotation = inRotation;
@@ -56,12 +56,12 @@ public class Movie {
         this.movieLength = movieLength;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMovieDescription() {
+        return movieDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMovieDescription(String description) {
+        this.movieDescription = description;
     }
 
     public int getAgeRequirement() {
@@ -94,7 +94,7 @@ public class Movie {
                 "movieId=" + movieId +
                 ", movieTitel='" + movieTitle + '\'' +
                 ", movieLength=" + movieLength +
-                ", description='" + description + '\'' +
+                ", description='" + movieDescription + '\'' +
                 ", ageRequirement=" + ageRequirement +
                 ", moviePosterUrl='" + moviePosterUrl + '\'' +
                 ", inRotation=" + inRotation +
