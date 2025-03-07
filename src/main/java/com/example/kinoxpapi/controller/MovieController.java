@@ -29,6 +29,7 @@ public class MovieController {
         var movie = movieRepository.findAll();
         return movie;
     }
+
     @PostMapping("/movie")
     @ResponseStatus(HttpStatus.CREATED)
     public Movie postMovie(@RequestBody Movie movie) {
@@ -36,22 +37,24 @@ public class MovieController {
         return movieRepository.save(movie);
     }
 
-    @DeleteMapping("/{movieId}")
-    public ResponseEntity<Movie> deleteMovie(@PathVariable int movieId) {
-        if (movieRepository.existsById(movieId)){
-            movieRepository.deleteById(movieId);
-            return ResponseEntity.noContent().build();
-        }else {
-            return ResponseEntity.notFound().build();
-        }
-    }
- @GetMapping("/{movieId}")
-    public ResponseEntity<Movie> getMovie(@PathVariable int movieId) {
-        Optional<Movie> movie = movieRepository.findById(movieId);
-        if (movie.isPresent()){
+    @PutMapping("/{movieId}")
+    public ResponseEntity<Movie> deactivateMovie(@PathVariable int movieId) {
+        Optional<Movie> movie = movieService.deactivateMovie(movieId);
+        if (movie.isPresent()) {
             return ResponseEntity.ok(movie.get());
         } else {
             return ResponseEntity.notFound().build();
         }
- }
+    }
+
+
+    @GetMapping("/{movieId}")
+    public ResponseEntity<Movie> getMovie(@PathVariable int movieId) {
+        Optional<Movie> movie = movieRepository.findById(movieId);
+        if (movie.isPresent()) {
+            return ResponseEntity.ok(movie.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
