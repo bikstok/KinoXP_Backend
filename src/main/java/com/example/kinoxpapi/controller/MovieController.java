@@ -12,6 +12,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "http://localhost:63342")
 public class MovieController {
 
     //SKal vi bruge responseEntity objektet for mere fleksibilitet som returværdi?

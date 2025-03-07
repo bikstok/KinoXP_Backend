@@ -11,7 +11,7 @@ public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movieId;
-    private String movieTitel;
+    private String movieTitle;
     private int movieLength;
     private String description;
     private int ageRequirement;
@@ -23,8 +23,8 @@ public class Movie {
 
     }
 
-    public Movie(String movieTitel, int movieLength, String description, int ageRequirement, String moviePosterUrl, boolean inRotation) {
-        this.movieTitel = movieTitel;
+    public Movie(String movieTitle, int movieLength, String description, int ageRequirement, String moviePosterUrl, boolean inRotation) {
+        this.movieTitle = movieTitle;
         this.movieLength = movieLength;
         this.description = description;
         this.ageRequirement = ageRequirement;
@@ -40,12 +40,12 @@ public class Movie {
         this.movieId = movieId;
     }
 
-    public String getMovieTitel() {
-        return movieTitel;
+    public String getMovieTitle() {
+        return movieTitle;
     }
 
-    public void setMovieTitel(String movieTitel) {
-        this.movieTitel = movieTitel;
+    public void setMovieTitle(String movieTitel) {
+        this.movieTitle = movieTitel;
     }
 
     public int getMovieLength() {
@@ -92,7 +92,7 @@ public class Movie {
     public String toString() {
         return "Movie{" +
                 "movieId=" + movieId +
-                ", movieTitel='" + movieTitel + '\'' +
+                ", movieTitel='" + movieTitle + '\'' +
                 ", movieLength=" + movieLength +
                 ", description='" + description + '\'' +
                 ", ageRequirement=" + ageRequirement +
