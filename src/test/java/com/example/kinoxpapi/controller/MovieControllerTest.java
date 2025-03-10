@@ -19,7 +19,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+      
+@ActiveProfiles("test")
 @WebMvcTest(MovieController.class) // Replace with your actual controller name if different
+@SpringBootTest
 @ContextConfiguration(classes = KinoXpApiApplication.class)
 public class MovieControllerTest {
 
@@ -31,9 +34,26 @@ public class MovieControllerTest {
 
     @MockBean
     private MovieRepository movieRepository;
+    @Autowired
+    MovieRepository movieRepository;
+    @Autowired
+    MovieController movieController;
+
 
     @Autowired
     private ObjectMapper objectMapper;
+  
+  @Transactional
+    @Test
+    void deactivateMovie() {
+        Movie lionKing = movieRepository.save(new Movie("Lionking", 125, "En meget god film med løver", 12, "URL", true));
+
+        movieController.deactivateMovie(lionKing.getMovieId());
+        Optional<Movie> updatedLionKing = movieRepository.findById(lionKing.getMovieId());
+
+
+        assertFalse(updatedLionKing.get().isInRotation());
+    }
 
     @Test
     void testPostMovie_Success() throws Exception {
