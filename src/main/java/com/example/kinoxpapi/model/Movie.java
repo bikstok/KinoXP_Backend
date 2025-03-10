@@ -16,7 +16,9 @@ public class Movie {
     private String movieDescription;
     private int ageRequirement;
     private String moviePosterUrl;
-    private boolean inRotation;
+    private boolean inRotation = true;
+
+
 
 
     public Movie() {
