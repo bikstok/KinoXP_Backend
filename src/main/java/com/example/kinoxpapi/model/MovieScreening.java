@@ -68,13 +68,31 @@ public class MovieScreening {
         this.hasPlayed = hasPlayed;
     }
 
+    public ScreeningTime getScreeningTime() {
+        return screeningTime;
+    }
+
+    public void setScreeningTime(ScreeningTime screeningTime) {
+        this.screeningTime = screeningTime;
+    }
+
+    public Auditorium getAuditorium() {
+        return auditorium;
+    }
+
+    public void setAuditorium(Auditorium auditorium) {
+        this.auditorium = auditorium;
+    }
+
     @Override
     public String toString() {
         return "MovieScreening{" +
                 "movieScreeningId=" + movieScreeningId +
                 ", movie=" + movie +
+                ", screeningTime=" + screeningTime +
                 ", screeningDate=" + screeningDate +
                 ", hasPlayed=" + hasPlayed +
+                ", auditorium=" + auditorium +
                 '}';
     }
 }
