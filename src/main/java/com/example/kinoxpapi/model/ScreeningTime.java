@@ -8,5 +8,4 @@ public enum ScreeningTime {
     TIME_18_00,
     TIME_20_00,
     TIME_22_00
-
 }
