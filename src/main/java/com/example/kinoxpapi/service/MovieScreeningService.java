@@ -35,4 +35,8 @@ public class MovieScreeningService {
     public List<ScreeningTime> getScreeningTimeSlots ()    {
         return Arrays.asList(ScreeningTime.values());
     }
+
+    public Optional<MovieScreening> updateMovieScreening(MovieScreening movieScreening)    {
+        return updateMovieScreening(movieScreening);
+    }
 }

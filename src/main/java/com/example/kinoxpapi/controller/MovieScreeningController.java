@@ -39,4 +39,15 @@ public class MovieScreeningController {
     public List<ScreeningTime> getScreeningTimeSlots() {
         return movieScreeningService.getScreeningTimeSlots();
     }
+
+    @PutMapping("updateMovieScreening")
+    public ResponseEntity<MovieScreening> updateMovieScreening(@RequestBody MovieScreening movieScreening) {
+        Optional<MovieScreening> optionalMovieScreening = movieScreeningService.updateMovieScreening(movieScreening);
+
+        if (optionalMovieScreening.isPresent()) {
+            return ResponseEntity.ok(optionalMovieScreening.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
