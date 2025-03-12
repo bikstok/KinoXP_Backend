@@ -6,6 +6,7 @@ import com.example.kinoxpapi.repository.MovieScreeningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -32,7 +33,22 @@ public class MovieScreeningService {
         }
     }
 
-    public List<ScreeningTime> getScreeningTimeSlots ()    {
+    public List<ScreeningTime> getScreeningTimeSlots() {
         return Arrays.asList(ScreeningTime.values());
     }
+
+    public Optional<MovieScreening> createMovieScreening(MovieScreening movieScreening) {
+        Optional<MovieScreening> optionalMovieScreening = Optional.of(movieScreeningRepository.save(movieScreening));
+
+        if (optionalMovieScreening.isPresent()){
+            return optionalMovieScreening;
+        }
+        return null;
+    }
+
+    public List<MovieScreening> getAllMovieScreeningsNotAvailable(int auditorium, String date){
+        return movieScreeningRepository.findByAuditoriumAndScreeningDate(auditorium, date);
+    }
 }
+
+
