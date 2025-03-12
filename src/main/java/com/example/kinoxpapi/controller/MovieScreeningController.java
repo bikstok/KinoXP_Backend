@@ -1,6 +1,7 @@
 package com.example.kinoxpapi.controller;
 
 import com.example.kinoxpapi.model.MovieScreening;
+import com.example.kinoxpapi.model.ScreeningTime;
 import com.example.kinoxpapi.service.MovieScreeningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,5 +33,10 @@ public class MovieScreeningController {
         }else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/getScreeningTimeSlots")
+    public List<ScreeningTime> getScreeningTimeSlots() {
+        return movieScreeningService.getScreeningTimeSlots();
     }
 }

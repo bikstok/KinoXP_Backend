@@ -66,7 +66,7 @@ public class InitData implements CommandLineRunner {
         Movie movie3 = new Movie("Interstellar", 169, "A journey beyond our galaxy.", 10, "https://image.url/interstellar.jpg", false);
 
         Movie movie1 = new Movie("Inception", 148, "A thief enters dreams to steal secrets.", 13, "https://xl.movieposterdb.com/14_09/2014/816692/xl_816692_2beaba6e.jpg?v=2025-02-10%2020:28:48", true);
-        MovieScreening movieScreening = new MovieScreening(movie1, ScreeningTime.TIME_14_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening = new MovieScreening(movie1, ScreeningTime.TIME_14_00, LocalDate.now(), false, auditorium2);
         Seat seat = seatRepository.getById(67);
 
         SeatReservation seatReservation = new SeatReservation(seat, movieScreening, true);

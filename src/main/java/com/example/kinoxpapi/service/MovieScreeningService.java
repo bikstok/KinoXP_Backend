@@ -1,10 +1,12 @@
 package com.example.kinoxpapi.service;
 
 import com.example.kinoxpapi.model.MovieScreening;
+import com.example.kinoxpapi.model.ScreeningTime;
 import com.example.kinoxpapi.repository.MovieScreeningRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +30,9 @@ public class MovieScreeningService {
         } else {
             return movieScreening;
         }
+    }
 
-
+    public List<ScreeningTime> getScreeningTimeSlots ()    {
+        return Arrays.asList(ScreeningTime.values());
     }
 }
