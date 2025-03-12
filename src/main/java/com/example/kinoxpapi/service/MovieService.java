@@ -39,4 +39,8 @@ public class MovieService {
     public Optional<Movie> saveMovie(Movie movie)    {
         return Optional.of(movieRepository.save(movie));
     }
+
+    public Optional<Movie> findMovieByTitle(String movieTitle) {
+        return movieRepository.findByMovieTitle(movieTitle);
+    }
 }

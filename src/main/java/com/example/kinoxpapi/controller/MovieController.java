@@ -63,4 +63,14 @@ public class MovieController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/fetchMovieByTitle{movieTitle}")
+    public ResponseEntity<Movie> fetchMovieByTitle(@PathVariable String movieTitle) {
+        Optional<Movie> movie = movieService.findMovieByTitle(movieTitle);
+        if (movie.isPresent()) {
+            return ResponseEntity.ok(movie.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
