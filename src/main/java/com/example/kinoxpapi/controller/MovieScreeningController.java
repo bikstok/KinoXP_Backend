@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,10 +63,9 @@ public class MovieScreeningController {
         } else {
             return ResponseEntity.notFound().build();
         }
-
+    }
     @GetMapping("/movieScreenings/{auditorium}/{date}")
-    public List<MovieScreening> getAvailableTimeslots(
-            @PathVariable("auditorium") int auditorium, @PathVariable("date") String date){
+    public List<MovieScreening> getAvailableTimeslots(@PathVariable("auditorium") int auditorium, @PathVariable("date") LocalDate date){
 
         return movieScreeningService.getAllMovieScreeningsNotAvailable(auditorium, date);
     }

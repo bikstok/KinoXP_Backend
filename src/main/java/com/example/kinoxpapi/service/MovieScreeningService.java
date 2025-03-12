@@ -1,5 +1,6 @@
 package com.example.kinoxpapi.service;
 
+import com.example.kinoxpapi.model.Auditorium;
 import com.example.kinoxpapi.model.MovieScreening;
 import com.example.kinoxpapi.model.ScreeningTime;
 import com.example.kinoxpapi.repository.MovieScreeningRepository;
@@ -46,8 +47,22 @@ public class MovieScreeningService {
         return null;
     }
 
-    public List<MovieScreening> getAllMovieScreeningsNotAvailable(int auditorium, String date){
-        return movieScreeningRepository.findByAuditoriumAndScreeningDate(auditorium, date);
+    public List<MovieScreening> getAllMovieScreeningsNotAvailable(int auditorium, LocalDate date){
+        //Need to instansiate an     auditorium object to query the database
+        Auditorium newAuditorium = new Auditorium();
+        if (auditorium == 1){
+            newAuditorium.setAuditoriumId(1);
+            newAuditorium.setAuditoriumNumber(1);
+        } else if (auditorium == 2){
+            newAuditorium.setAuditoriumId(2);
+            newAuditorium.setAuditoriumNumber(2);
+        }
+
+        return movieScreeningRepository.findByAuditoriumAndScreeningDate(newAuditorium, date);
+    }
+
+    public Optional<MovieScreening> updateMovieScreening(MovieScreening movieScreening) {
+        return null;
     }
 }
 
