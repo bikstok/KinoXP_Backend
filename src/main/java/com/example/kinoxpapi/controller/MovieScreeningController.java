@@ -1,5 +1,6 @@
 package com.example.kinoxpapi.controller;
 
+import com.example.kinoxpapi.model.Auditorium;
 import com.example.kinoxpapi.model.MovieScreening;
 import com.example.kinoxpapi.model.ScreeningTime;
 import com.example.kinoxpapi.service.MovieScreeningService;
@@ -19,18 +20,29 @@ public class MovieScreeningController {
     MovieScreeningService movieScreeningService;
 
     @GetMapping("/showMovieScreenings")
-    public List<MovieScreening> getListOfMovieScreenings()  {
+    public List<MovieScreening> getListOfMovieScreenings() {
         System.out.println(movieScreeningService.getListOfMovieScreenings());
         return movieScreeningService.getListOfMovieScreenings();
+    }
+
+    @PostMapping("/movieScreening")
+    public ResponseEntity<MovieScreening> createMovieScreening(@PathVariable MovieScreening movieScreening) {
+        Optional<MovieScreening> optionalMovieScreening = movieScreeningService.createMovieScreening(movieScreening);
+
+        if (optionalMovieScreening.isPresent()) {
+            return ResponseEntity.ok(optionalMovieScreening.get());
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @PutMapping("deactivateMovieScreening/{movieScreeningId}")
     public ResponseEntity<MovieScreening> deactivateMovieScreening(@PathVariable int movieScreeningId) {
         Optional<MovieScreening> optionalMovieScreening = movieScreeningService.deactivateMovieScreening(movieScreeningId);
 
-        if(optionalMovieScreening.isPresent()) {
+        if (optionalMovieScreening.isPresent()) {
             return ResponseEntity.ok(optionalMovieScreening.get());
-        }else {
+        } else {
             return ResponseEntity.notFound().build();
         }
     }
@@ -39,6 +51,7 @@ public class MovieScreeningController {
     public List<ScreeningTime> getScreeningTimeSlots() {
         return movieScreeningService.getScreeningTimeSlots();
     }
+
 
     @PutMapping("updateMovieScreening")
     public ResponseEntity<MovieScreening> updateMovieScreening(@RequestBody MovieScreening movieScreening) {
@@ -49,5 +62,13 @@ public class MovieScreeningController {
         } else {
             return ResponseEntity.notFound().build();
         }
+
+    @GetMapping("/movieScreenings/{auditorium}/{date}")
+    public List<MovieScreening> getAvailableTimeslots(
+            @PathVariable("auditorium") int auditorium, @PathVariable("date") String date){
+
+        return movieScreeningService.getAllMovieScreeningsNotAvailable(auditorium, date);
     }
 }
+
+
