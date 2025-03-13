@@ -1,7 +1,5 @@
 package com.example.kinoxpapi.controller;
 
-import com.example.kinoxpapi.model.Auditorium;
-import com.example.kinoxpapi.model.Movie;
 import com.example.kinoxpapi.model.MovieScreening;
 import com.example.kinoxpapi.model.ScreeningTime;
 import com.example.kinoxpapi.service.AuditoriumService;
@@ -9,7 +7,6 @@ import com.example.kinoxpapi.service.MovieScreeningService;
 import com.example.kinoxpapi.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -29,14 +26,12 @@ public class MovieScreeningController {
 
     @GetMapping("/showMovieScreenings")
     public List<MovieScreening> getListOfMovieScreenings() {
-        System.out.println(movieScreeningService.getListOfMovieScreenings());
         return movieScreeningService.getListOfMovieScreenings();
     }
 
     @PostMapping("/movieScreening")
     public ResponseEntity<MovieScreening> createMovieScreening(@RequestBody MovieScreening movieScreening) {
 
-        System.out.println(movieScreening);
         Optional<MovieScreening> optionalMovieScreening = movieScreeningService.createMovieScreening(movieScreening);
 
         if (optionalMovieScreening.isPresent()) {
@@ -74,7 +69,7 @@ public class MovieScreeningController {
         }
     }
     @GetMapping("/movieScreenings/{auditorium}/{date}")
-    public List<MovieScreening> getAvailableTimeslots(@PathVariable("auditorium") int auditorium, @PathVariable("date") LocalDate date){
+    public List<MovieScreening> getNonAvailableTimeslots(@PathVariable("auditorium") int auditorium, @PathVariable("date") LocalDate date){
 
         return movieScreeningService.getAllMovieScreeningsNotAvailable(auditorium, date);
     }
