@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "https://kinoxpapi-hqhfffgncxdhf6bu.northeurope-01.azurewebsites.net/")
+@CrossOrigin(origins = "http://localhost:63343")
 public class AuditoriumController {
 
     @Autowired
