@@ -60,6 +60,7 @@ public class MovieScreeningController {
 
     @PutMapping("updateMovieScreening")
     public ResponseEntity<MovieScreening> updateMovieScreening(@RequestBody MovieScreening movieScreening) {
+        System.out.println(movieScreening);
         Optional<MovieScreening> optionalMovieScreening = movieScreeningService.updateMovieScreening(movieScreening);
 
         if (optionalMovieScreening.isPresent()) {
