@@ -1,4 +1,4 @@
-package com.example.kinoxpapi.config;
+package com.example.kinoxpapi.confiq;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         // Allow CORS for your frontend URL (replace with your actual frontend URL)
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:63343") // Replace with your frontend URL
+                .allowedOrigins("*") // Replace with your frontend URL
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Allow the necessary methods
                 .allowedHeaders("*") // Allow all headers
                 .allowCredentials(true); // Allow credentials (cookies, etc.)
