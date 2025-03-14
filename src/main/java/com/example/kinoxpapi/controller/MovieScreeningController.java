@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://kinoxpapi-hqhfffgncxdhf6bu.northeurope-01.azurewebsites.net/")
 @RestController
 public class MovieScreeningController {
 
