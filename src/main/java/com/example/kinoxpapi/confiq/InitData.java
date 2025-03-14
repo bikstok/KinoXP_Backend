@@ -130,6 +130,11 @@ public class InitData implements CommandLineRunner {
         MovieScreening movieScreening49 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(4), false, auditorium1);
         MovieScreening movieScreening50 = new MovieScreening(movie10, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(4), false, auditorium1);
 
+        US13-Find-og-vælg-filmvisning
+
+        Movie movie1 = new Movie("Inception", 148, "A thief enters dreams to steal secrets.", 13, "https://xl.movieposterdb.com/14_09/2014/816692/xl_816692_2beaba6e.jpg?v=2025-02-10%2020:28:48", true);
+        MovieScreening movieScreening = new MovieScreening(movie1, ScreeningTime.TIME_14_00, LocalDate.now(), false, auditorium2);
+
         Seat seat = seatRepository.getById(67);
 
         SeatReservation seatReservation = new SeatReservation(seat, movieScreening, true);

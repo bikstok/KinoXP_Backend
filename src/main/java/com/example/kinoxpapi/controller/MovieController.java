@@ -14,7 +14,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://kinoxpapi-hqhfffgncxdhf6bu.northeurope-01.azurewebsites.net/")
 
 
 public class MovieController {
@@ -63,4 +63,15 @@ public class MovieController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/fetchMovieByTitle{movieTitle}")
+    public ResponseEntity<Movie> fetchMovieByTitle(@PathVariable String movieTitle) {
+        Optional<Movie> movie = movieService.findMovieByTitle(movieTitle);
+        if (movie.isPresent()) {
+            return ResponseEntity.ok(movie.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
+    
