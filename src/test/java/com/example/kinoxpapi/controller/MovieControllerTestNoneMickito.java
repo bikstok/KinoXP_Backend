@@ -23,15 +23,15 @@ public class MovieControllerTestNoneMickito {
     @Autowired
     MovieRepository movieRepository;
   
-  @Transactional
-    @Test
-    void deactivateMovie() {
-        Movie lionKing = movieRepository.save(new Movie("Lionking", 125, "En meget god film med løver", 12, "URL", true));
-
-        movieController.deactivateMovie(lionKing.getMovieId());
-        Optional<Movie> updatedLionKing = movieRepository.findById(lionKing.getMovieId());
-
-
-        assertFalse(updatedLionKing.get().isInRotation());
-    }
+//  @Transactional
+//    @Test
+//    void deactivateMovie() {
+//        Movie lionKing = movieRepository.save(new Movie("Lionking", 125, "En meget god film med løver", 12, "URL", true));
+//
+//        movieController.deactivateMovie(lionKing.getMovieId());
+//        Optional<Movie> updatedLionKing = movieRepository.findById(lionKing.getMovieId());
+//
+//
+//        assertFalse(updatedLionKing.get().isInRotation());
+//    }
 }

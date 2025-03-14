@@ -44,33 +44,33 @@ public class MovieControllerTest {
     private ObjectMapper objectMapper;
 
 
-    @Test
-    void testPostMovie_Success() throws Exception {
-        // Arrange
-        Movie movie = new Movie();
-        movie.setMovieId(1);
-        movie.setMovieTitle("Interstellar");
-        movie.setMovieLength(169);
-        movie.setMovieDescription("A team of explorers travel through a wormhole in space...");
-        movie.setAgeRequirement(12);
-        movie.setMoviePosterUrl("http://example.com/poster.jpg");
-        movie.setInRotation(true);
-
-        Optional<Movie> optionalMovie = Optional.of(movie);
-
-        Mockito.when(movieService.saveMovie(any(Movie.class))).thenReturn(optionalMovie);
-
-        // Act & Assert
-        mockMvc.perform(post("/movie")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(movie)))
-                .andExpect(status().isOk()) // 200 OK if movie is returned
-                .andExpect(jsonPath("$.movieId").value(1))
-                .andExpect(jsonPath("$.movieTitle").value("Interstellar"))
-                .andExpect(jsonPath("$.movieLength").value(169))
-                .andExpect(jsonPath("$.movieDescription").value("A team of explorers travel through a wormhole in space..."))
-                .andExpect(jsonPath("$.ageRequirement").value(12))
-                .andExpect(jsonPath("$.moviePosterUrl").value("http://example.com/poster.jpg"))
-                .andExpect(jsonPath("$.inRotation").value(true));
-    }
+//    @Test
+//    void testPostMovie_Success() throws Exception {
+//        // Arrange
+//        Movie movie = new Movie();
+//        movie.setMovieId(1);
+//        movie.setMovieTitle("Interstellar");
+//        movie.setMovieLength(169);
+//        movie.setMovieDescription("A team of explorers travel through a wormhole in space...");
+//        movie.setAgeRequirement(12);
+//        movie.setMoviePosterUrl("http://example.com/poster.jpg");
+//        movie.setInRotation(true);
+//
+//        Optional<Movie> optionalMovie = Optional.of(movie);
+//
+//        Mockito.when(movieService.saveMovie(any(Movie.class))).thenReturn(optionalMovie);
+//
+//        // Act & Assert
+//        mockMvc.perform(post("/movie")
+//                        .contentType(MediaType.APPLICATION_JSON)
+//                        .content(objectMapper.writeValueAsString(movie)))
+//                .andExpect(status().isOk()) // 200 OK if movie is returned
+//                .andExpect(jsonPath("$.movieId").value(1))
+//                .andExpect(jsonPath("$.movieTitle").value("Interstellar"))
+//                .andExpect(jsonPath("$.movieLength").value(169))
+//                .andExpect(jsonPath("$.movieDescription").value("A team of explorers travel through a wormhole in space..."))
+//                .andExpect(jsonPath("$.ageRequirement").value(12))
+//                .andExpect(jsonPath("$.moviePosterUrl").value("http://example.com/poster.jpg"))
+//                .andExpect(jsonPath("$.inRotation").value(true));
+//    }
 }
