@@ -73,25 +73,63 @@ public class InitData implements CommandLineRunner {
         Movie movie9 = new Movie("Pigen med Nålen", 154, "", 18, "https://poster.ebillet.dk/PigenMedNaalen-2025citat.hd.jpg", true);
         Movie movie10 = new Movie("The Brutalist", 154, "", 18, "https://poster.ebillet.dk/TheBrutalist-2025.hd.jpg", true);
 
-        MovieScreening movieScreening = new MovieScreening(movie1, ScreeningTime.TIME_14_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening2 = new MovieScreening(movie1, ScreeningTime.TIME_16_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening3 = new MovieScreening(movie2, ScreeningTime.TIME_16_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening4 = new MovieScreening(movie3, ScreeningTime.TIME_18_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening5 = new MovieScreening(movie4, ScreeningTime.TIME_20_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening6 = new MovieScreening(movie5, ScreeningTime.TIME_22_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening7 = new MovieScreening(movie6, ScreeningTime.TIME_10_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening8 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening9 = new MovieScreening(movie8, ScreeningTime.TIME_22_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening = new MovieScreening(movie1, ScreeningTime.TIME_10_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening2 = new MovieScreening(movie2, ScreeningTime.TIME_12_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening3 = new MovieScreening(movie3, ScreeningTime.TIME_14_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening4 = new MovieScreening(movie4, ScreeningTime.TIME_16_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening5 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening6 = new MovieScreening(movie6, ScreeningTime.TIME_20_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening7 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening8 = new MovieScreening(movie8, ScreeningTime.TIME_10_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening9 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening1 = new MovieScreening(movie10, ScreeningTime.TIME_12_00, LocalDate.now(), false, auditorium1);
+
+
         MovieScreening movieScreening10 = new MovieScreening(movie4, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(1), false, auditorium1);
-        MovieScreening movieScreening11 = new MovieScreening(movie4, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(1), false, auditorium1);
-        MovieScreening movieScreening12 = new MovieScreening(movie5, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(2), false, auditorium1);
-        MovieScreening movieScreening13 = new MovieScreening(movie5, ScreeningTime.TIME_16_00, LocalDate.now().plusDays(2), false, auditorium1);
-        MovieScreening movieScreening14 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(2), false, auditorium1);
-        MovieScreening movieScreening15 = new MovieScreening(movie6, ScreeningTime.TIME_22_00, LocalDate.now().plusDays(3), false, auditorium1);
-        MovieScreening movieScreening16 = new MovieScreening(movie6, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(3), false, auditorium1);
-        MovieScreening movieScreening17 = new MovieScreening(movie6, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(3), false, auditorium1);
-        MovieScreening movieScreening18 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now(), false, auditorium1);
-        MovieScreening movieScreening19 = new MovieScreening(movie10, ScreeningTime.TIME_12_00, LocalDate.now(), false, auditorium1);
+        MovieScreening movieScreening11 = new MovieScreening(movie1, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening12 = new MovieScreening(movie2, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening13 = new MovieScreening(movie3, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening14 = new MovieScreening(movie4, ScreeningTime.TIME_16_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening15 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening16 = new MovieScreening(movie6, ScreeningTime.TIME_20_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening17 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening18 = new MovieScreening(movie8, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening19 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(1), false, auditorium1);
+        MovieScreening movieScreening20 = new MovieScreening(movie10, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(1), false, auditorium1);
+
+        MovieScreening movieScreening21 = new MovieScreening(movie1, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening22 = new MovieScreening(movie2, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening23 = new MovieScreening(movie3, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening24 = new MovieScreening(movie4, ScreeningTime.TIME_16_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening25 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening26 = new MovieScreening(movie6, ScreeningTime.TIME_20_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening27 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening28 = new MovieScreening(movie8, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening29 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(2), false, auditorium1);
+        MovieScreening movieScreening30 = new MovieScreening(movie10, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(2), false, auditorium1);
+
+        MovieScreening movieScreening31 = new MovieScreening(movie1, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening32 = new MovieScreening(movie2, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening33 = new MovieScreening(movie3, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening34 = new MovieScreening(movie4, ScreeningTime.TIME_16_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening35 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening36 = new MovieScreening(movie6, ScreeningTime.TIME_20_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening37 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening38 = new MovieScreening(movie8, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening39 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(3), false, auditorium1);
+        MovieScreening movieScreening40 = new MovieScreening(movie10, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(3), false, auditorium1);
+
+        MovieScreening movieScreening41 = new MovieScreening(movie1, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening42 = new MovieScreening(movie2, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening43 = new MovieScreening(movie3, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening44 = new MovieScreening(movie4, ScreeningTime.TIME_16_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening45 = new MovieScreening(movie5, ScreeningTime.TIME_18_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening46 = new MovieScreening(movie6, ScreeningTime.TIME_20_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening47 = new MovieScreening(movie7, ScreeningTime.TIME_22_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening48 = new MovieScreening(movie8, ScreeningTime.TIME_10_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening49 = new MovieScreening(movie9, ScreeningTime.TIME_12_00, LocalDate.now().plusDays(4), false, auditorium1);
+        MovieScreening movieScreening50 = new MovieScreening(movie10, ScreeningTime.TIME_14_00, LocalDate.now().plusDays(4), false, auditorium1);
+
         Seat seat = seatRepository.getById(67);
 
         SeatReservation seatReservation = new SeatReservation(seat, movieScreening, true);
@@ -110,6 +148,7 @@ public class InitData implements CommandLineRunner {
         movieRepository.save(movie10);
 
         movieScreeningRepository.save(movieScreening);
+        movieScreeningRepository.save(movieScreening1);
         movieScreeningRepository.save(movieScreening2);
         movieScreeningRepository.save(movieScreening3);
         movieScreeningRepository.save(movieScreening4);
@@ -128,6 +167,37 @@ public class InitData implements CommandLineRunner {
         movieScreeningRepository.save(movieScreening17);
         movieScreeningRepository.save(movieScreening18);
         movieScreeningRepository.save(movieScreening19);
+        movieScreeningRepository.save(movieScreening20);
+        movieScreeningRepository.save(movieScreening21);
+        movieScreeningRepository.save(movieScreening22);
+        movieScreeningRepository.save(movieScreening23);
+        movieScreeningRepository.save(movieScreening24);
+        movieScreeningRepository.save(movieScreening25);
+        movieScreeningRepository.save(movieScreening26);
+        movieScreeningRepository.save(movieScreening27);
+        movieScreeningRepository.save(movieScreening28);
+        movieScreeningRepository.save(movieScreening29);
+        movieScreeningRepository.save(movieScreening30);
+        movieScreeningRepository.save(movieScreening31);
+        movieScreeningRepository.save(movieScreening32);
+        movieScreeningRepository.save(movieScreening33);
+        movieScreeningRepository.save(movieScreening34);
+        movieScreeningRepository.save(movieScreening35);
+        movieScreeningRepository.save(movieScreening36);
+        movieScreeningRepository.save(movieScreening37);
+        movieScreeningRepository.save(movieScreening38);
+        movieScreeningRepository.save(movieScreening39);
+        movieScreeningRepository.save(movieScreening40);
+        movieScreeningRepository.save(movieScreening41);
+        movieScreeningRepository.save(movieScreening42);
+        movieScreeningRepository.save(movieScreening43);
+        movieScreeningRepository.save(movieScreening44);
+        movieScreeningRepository.save(movieScreening45);
+        movieScreeningRepository.save(movieScreening46);
+        movieScreeningRepository.save(movieScreening47);
+        movieScreeningRepository.save(movieScreening48);
+        movieScreeningRepository.save(movieScreening49);
+        movieScreeningRepository.save(movieScreening50);
 
         seatReservationRepository.save(seatReservation);
 
